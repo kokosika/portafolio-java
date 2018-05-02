@@ -1,13 +1,8 @@
 package com.serviexpress.servicios.servicios.common;
 
 import com.serviexpress.dto.GenericResponse;
-import com.serviexpress.dto.custom.ClienteDto;
 import com.serviexpress.dto.custom.EmpleadoDto;
-import com.serviexpress.dto.custom.PersonaDto;
-import com.serviexpress.dto.custom.ProveedorDto;
-import com.serviexpress.repositorios.interfaces.common.IClienteRepositorio;
 import com.serviexpress.repositorios.interfaces.common.IEmpleadoRepositorio;
-import com.serviexpress.servicios.interfaces.common.IClienteService;
 import com.serviexpress.servicios.interfaces.common.IEmpleadoService;
 import com.serviexpress.servicios.servicios.BaseServicios;
 import org.springframework.http.ResponseEntity;
@@ -88,7 +83,7 @@ public class EmpleadoService extends BaseServicios implements IEmpleadoService {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param empleadoId id del empleado
+     * @param empleadoId       id del empleado
      * @param estadoEmpleadoId id del estado del empleado
      * @return respuesta generica a la capa api web
      */

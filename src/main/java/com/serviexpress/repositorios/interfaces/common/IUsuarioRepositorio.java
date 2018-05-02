@@ -28,6 +28,7 @@ public interface IUsuarioRepositorio extends IBaseRepositorio {
      * @param usuarioDto objecto usuario que se almacenara en la base de datos.
      */
     public void guardarUsuario(UsuarioDto usuarioDto);
+
     /**
      * Metodo para modificar usuarios en la base de datos.
      * Llama al procedimiento PRC_UDT_USUARIO
@@ -44,7 +45,7 @@ public interface IUsuarioRepositorio extends IBaseRepositorio {
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param usuarioId id del usuario.
+     * @param usuarioId       id del usuario.
      * @param estadoUsuarioId id del estado de usuario.
      */
     public void eliminarUsuario(Integer usuarioId, Integer estadoUsuarioId);
@@ -52,7 +53,7 @@ public interface IUsuarioRepositorio extends IBaseRepositorio {
     /**
      * Metodo especifico para la autenticacion de spring security
      * Obtiene un usuario a travez de su nombre de usuario.
-     *
+     * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
      * @param nombre nombre de usuario

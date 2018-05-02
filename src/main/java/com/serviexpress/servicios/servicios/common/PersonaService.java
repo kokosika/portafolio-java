@@ -82,7 +82,7 @@ public class PersonaService extends BaseServicios implements IPersonaService {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param personaId id de la persona.
+     * @param personaId       id de la persona.
      * @param estadoPersonaId id del estado de la persona.
      * @return respuesta generica a la capa api web
      */

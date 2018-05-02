@@ -2,10 +2,7 @@ package com.serviexpress.api.rest.common;
 
 import com.serviexpress.api.rest.BaseRest;
 import com.serviexpress.dto.GenericResponse;
-import com.serviexpress.dto.custom.ClienteDto;
-import com.serviexpress.dto.custom.PersonaDto;
 import com.serviexpress.dto.custom.ProveedorDto;
-import com.serviexpress.servicios.interfaces.common.IClienteService;
 import com.serviexpress.servicios.interfaces.common.IProveedorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -75,7 +72,7 @@ public class ProveedorRestController extends BaseRest {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param proveedorId id del proveedor.
+     * @param proveedorId       id del proveedor.
      * @param estadoProveedorId id del estado el proveedor.
      * @return retorna una respuesta al cliente.
      */

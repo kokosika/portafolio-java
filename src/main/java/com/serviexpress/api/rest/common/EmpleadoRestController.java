@@ -3,9 +3,7 @@ package com.serviexpress.api.rest.common;
 import com.serviexpress.api.rest.BaseRest;
 import com.serviexpress.dto.GenericResponse;
 import com.serviexpress.dto.custom.EmpleadoDto;
-import com.serviexpress.dto.custom.ProveedorDto;
 import com.serviexpress.servicios.interfaces.common.IEmpleadoService;
-import com.serviexpress.servicios.interfaces.common.IProveedorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -74,7 +72,7 @@ public class EmpleadoRestController extends BaseRest {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param empleadoId id del empleado.
+     * @param empleadoId       id del empleado.
      * @param estadoEmpleadoId id del estado del empleado.
      * @return retorna una respuesta al cliente.
      */

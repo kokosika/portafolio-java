@@ -65,9 +65,9 @@ public class ClienteRepositorio extends BaseRepositorio<ClienteContext> implemen
      * @param clienteDto objeto de tipo cliente para modificar en la base de datos.
      */
     @Override
-    public void editarCliente(ClienteDto clienteDto){
+    public void editarCliente(ClienteDto clienteDto) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put("CLIENTE_ID",clienteDto.getId());
+        params.put("CLIENTE_ID", clienteDto.getId());
         params.put("ESTADO_CLIENTE", clienteDto.getEstadoClienteId());
         params.put("PERSONA_ID", clienteDto.getPersonaId());
         params.put("SUCURSAL_ID", clienteDto.getSucursalId());
@@ -80,15 +80,15 @@ public class ClienteRepositorio extends BaseRepositorio<ClienteContext> implemen
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param clienteId variable de tipo id del cliente.
+     * @param clienteId       variable de tipo id del cliente.
      * @param estadoClienteId variable de tipo id del estado de la persona.
      */
     @Override
-    public void eliminarCliente(Integer clienteId, Integer estadoClienteId){
+    public void eliminarCliente(Integer clienteId, Integer estadoClienteId) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put("CLIENTE_ID",clienteId);
-        params.put("ESTADO_CLIENTE_ID",estadoClienteId);
-        execute("PRC_DEL_CLIENTE",params);
+        params.put("CLIENTE_ID", clienteId);
+        params.put("ESTADO_CLIENTE_ID", estadoClienteId);
+        execute("PRC_DEL_CLIENTE", params);
     }
 
     /**

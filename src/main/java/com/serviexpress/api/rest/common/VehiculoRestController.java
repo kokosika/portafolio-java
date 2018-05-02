@@ -72,7 +72,7 @@ public class VehiculoRestController extends BaseRest {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param vehiculoId id del vehiculo.
+     * @param vehiculoId       id del vehiculo.
      * @param estadoVehiculoId id del estado del vehiculo.
      * @return retorna una respuesta al cliente.
      */

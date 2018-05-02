@@ -53,6 +53,7 @@ public class UsuarioRepositorio extends BaseRepositorio<UsuarioContext> implemen
         IntegerDto data = (IntegerDto) executeList(IntegerDto.class, "PRC_VALIDAR_LOGIN", params).get(0);
         return data.getData() != 0;
     }
+
     /**
      * Metodo para guardar usuarios en la base de datos.
      * Llama al procedimiento PRC_INS_USUARIO
@@ -81,7 +82,7 @@ public class UsuarioRepositorio extends BaseRepositorio<UsuarioContext> implemen
      *
      * @param usuarioDto objecto usuario que se modificara en la base de datos.
      */
-    public void editarUsuario(UsuarioDto usuarioDto){
+    public void editarUsuario(UsuarioDto usuarioDto) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_USUARIO_ID", usuarioDto.getId());
         params.put("V_CONTRACENA", usuarioDto.getContracena());
@@ -99,10 +100,10 @@ public class UsuarioRepositorio extends BaseRepositorio<UsuarioContext> implemen
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param usuarioId id del usuario.
+     * @param usuarioId       id del usuario.
      * @param estadoUsuarioId id del estado de usuario.
      */
-    public void eliminarUsuario(Integer usuarioId, Integer estadoUsuarioId){
+    public void eliminarUsuario(Integer usuarioId, Integer estadoUsuarioId) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_USUARIO_ID", usuarioId);
         params.put("V_ESTADO_USUARIO_ID", estadoUsuarioId);
@@ -112,18 +113,18 @@ public class UsuarioRepositorio extends BaseRepositorio<UsuarioContext> implemen
     /**
      * Metodo especifico para la autenticacion de spring security
      * Obtiene un usuario a travez de su nombre de usuario.
-     *
+     * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
      * @param nombre nombre de usuario
      * @return objecto usuario que rotarna la base de datos
      */
     @SuppressWarnings("unchecked")
-    public UsuarioDto obtenerUsuarioPorNombre(String nombre){
+    public UsuarioDto obtenerUsuarioPorNombre(String nombre) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_NOMBRE", nombre);
-        List<UsuarioDto> list = (List<UsuarioDto>)executeList(UsuarioDto.class, "PRC_LOGIN_SPRING",params);
-        if(list.isEmpty())
+        List<UsuarioDto> list = (List<UsuarioDto>) executeList(UsuarioDto.class, "PRC_LOGIN_SPRING", params);
+        if (list.isEmpty())
             return null;
         return list.get(0);
     }

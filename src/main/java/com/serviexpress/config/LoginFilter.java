@@ -1,13 +1,11 @@
 package com.serviexpress.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.serviexpress.dto.custom.UsuarioDto;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -22,7 +20,7 @@ import java.util.Collections;
 /**
  * Clase que extiende de AbstractAuthenticationProcessingFilter de spring security
  * Sera de ayuda para el filtro de url.
- *
+ * <p>
  * 1.0 Franco Cortez - Version inicial.
  */
 public class LoginFilter extends AbstractAuthenticationProcessingFilter {
@@ -30,9 +28,10 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     /**
      * Filtra el login de otras url para darle permisos y autorizacion para generar credenciales
      * dentro de la pagina
-     *
+     * <p>
      * 1.0 Franco Cortez - Version inicial.
-     * @param url url que se desea filtrar
+     *
+     * @param url         url que se desea filtrar
      * @param authManager objecto de ayuda para la autentificacion (Spring security)
      */
     public LoginFilter(String url, AuthenticationManager authManager) {
@@ -41,7 +40,6 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     }
 
     /**
-     *
      * @param req
      * @param res
      * @return
@@ -70,8 +68,8 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
             HttpServletResponse res, FilterChain chain,
             Authentication auth) throws IOException, ServletException {
         String role = "";
-        for (GrantedAuthority roles: auth.getAuthorities()) {
-            role = ";"+roles.getAuthority();
+        for (GrantedAuthority roles : auth.getAuthorities()) {
+            role = ";" + roles.getAuthority();
         }
         JwtUtil.addAuthentication(res, auth.getName(), role);
     }

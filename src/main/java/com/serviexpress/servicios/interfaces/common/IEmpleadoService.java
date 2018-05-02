@@ -2,7 +2,6 @@ package com.serviexpress.servicios.interfaces.common;
 
 import com.serviexpress.dto.GenericResponse;
 import com.serviexpress.dto.custom.EmpleadoDto;
-import com.serviexpress.dto.custom.ProveedorDto;
 import com.serviexpress.servicios.interfaces.IBaseServicios;
 import org.springframework.http.ResponseEntity;
 
@@ -46,7 +45,7 @@ public interface IEmpleadoService extends IBaseServicios {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param empleadoId id del empleado
+     * @param empleadoId       id del empleado
      * @param estadoEmpleadoId id del estado del empleado
      * @return respuesta generica a la capa api web
      */

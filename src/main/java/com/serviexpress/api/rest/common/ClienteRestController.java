@@ -73,7 +73,7 @@ public class ClienteRestController extends BaseRest {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param clienteId id del cliente
+     * @param clienteId       id del cliente
      * @param estadoClienteId id del estado del cliente
      * @return retorna una respuesta al cliente.
      */

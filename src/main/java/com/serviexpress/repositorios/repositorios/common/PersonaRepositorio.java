@@ -70,9 +70,9 @@ public class PersonaRepositorio extends BaseRepositorio<PersonaContext> implemen
      * @param personaDto objeto de tipo persona para modificar en la base de datos.
      */
     @Override
-    public void editarPersona(PersonaDto personaDto){
-        HashMap<String,Object> params = new HashMap<>();
-        params.put("V_PERSONA_ID",personaDto);
+    public void editarPersona(PersonaDto personaDto) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("V_PERSONA_ID", personaDto);
         params.put("V_CORREO", personaDto.getCorreo());
         params.put("V_DIRECCION", personaDto.getDireccion());
         params.put("V_DIV_ID", personaDto.getDivId());
@@ -85,7 +85,7 @@ public class PersonaRepositorio extends BaseRepositorio<PersonaContext> implemen
         params.put("V_COMUNA_ID", personaDto.getComunaId());
         params.put("V_ESTADO_PERSONA_ID", personaDto.getEstadoPersonaId());
         params.put("V_TIPO_PERSONA_ID", personaDto.getTipoPersonaId());
-        execute("PRC_UDT_PERSONA",params);
+        execute("PRC_UDT_PERSONA", params);
     }
 
     /**
@@ -94,15 +94,15 @@ public class PersonaRepositorio extends BaseRepositorio<PersonaContext> implemen
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param personaId variable de tipo id de la persona.
+     * @param personaId       variable de tipo id de la persona.
      * @param estadoPersonaId variable de tipo estado de la persona.
      */
     @Override
-    public void elimnarPersona(Integer personaId, Integer estadoPersonaId){
-        HashMap<String,Object> params = new HashMap<>();
-        params.put("V_PERSONA_ID",personaId);
-        params.put("V_ESTADO_PERSONA_ID",estadoPersonaId);
-        execute("PRC_DEL_PERSONA" , params);
+    public void elimnarPersona(Integer personaId, Integer estadoPersonaId) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("V_PERSONA_ID", personaId);
+        params.put("V_ESTADO_PERSONA_ID", estadoPersonaId);
+        execute("PRC_DEL_PERSONA", params);
     }
 
     /**

@@ -1,7 +1,6 @@
 package com.serviexpress.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -14,6 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * Metodo que configura los filtros del login
      * Url Accesibles desde cualquier tipo de perfi
+     *
      * @param http parametro de tipo HttpSecurity para su configuracion
      * @throws Exception genera una excepcion comuna para cualquier comportamiento no deseado
      */

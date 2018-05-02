@@ -61,7 +61,7 @@ public class VehiculoRepositorio extends BaseRepositorio<VehiculoContext> implem
      * @param vehiculoDto objeto de tipo vehiculo para modificalo en la base de datos.
      */
     @Override
-    public void editarVehiculo(VehiculoDto vehiculoDto){
+    public void editarVehiculo(VehiculoDto vehiculoDto) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_VEHICULO_ID", vehiculoDto.getId());
         params.put("V_PATENTE", vehiculoDto.getPatente());
@@ -77,17 +77,17 @@ public class VehiculoRepositorio extends BaseRepositorio<VehiculoContext> implem
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param vehiculoId id del vehiculo.
+     * @param vehiculoId       id del vehiculo.
      * @param estadoVehiculoId id del estado del vehiculo.
-     *
      */
     @Override
-    public void eliminarVehiculo(Integer vehiculoId, Integer estadoVehiculoId){
+    public void eliminarVehiculo(Integer vehiculoId, Integer estadoVehiculoId) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_VEHICULO_ID", vehiculoId);
         params.put("V_ESTADO_VEHICULO_ID", estadoVehiculoId);
         execute("PRC_DEL_VEHICULO", params);
     }
+
     /**
      * Metodo para obtener todos los vehiculos asosciados a un cliente
      * Llama al procedimiento almacenado PRC_BUSCAR_VEHICULO_X_CLIENTE

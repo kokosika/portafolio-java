@@ -106,7 +106,7 @@ public class UsuarioService extends BaseServicios implements IUsuarioService {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param usuarioId id del usuario
+     * @param usuarioId       id del usuario
      * @param estadoUsuarioId id del estado del usuario
      * @return respuesta generica a la capa api web
      */

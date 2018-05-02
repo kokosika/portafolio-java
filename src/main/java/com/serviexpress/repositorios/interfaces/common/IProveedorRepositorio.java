@@ -41,7 +41,7 @@ public interface IProveedorRepositorio extends IBaseRepositorio {
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param proveedorId id del proveedor.
+     * @param proveedorId       id del proveedor.
      * @param estadoProveedorId id del estado del proveedor.
      */
     public void eliminarProveedor(Integer proveedorId, Integer estadoProveedorId);

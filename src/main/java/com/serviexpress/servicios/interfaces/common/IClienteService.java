@@ -46,7 +46,7 @@ public interface IClienteService extends IBaseServicios {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param clienteId id del cliente.
+     * @param clienteId       id del cliente.
      * @param estadoClienteId id del estado del cliente.
      * @return respuesta generica a la capa api web
      */

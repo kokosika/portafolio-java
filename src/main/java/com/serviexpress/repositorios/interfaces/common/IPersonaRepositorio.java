@@ -37,7 +37,7 @@ public interface IPersonaRepositorio extends IBaseRepositorio {
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param personaId variable de tipo id de la persona.
+     * @param personaId       variable de tipo id de la persona.
      * @param estadoPersonaId variable de tipo estado de la persona.
      */
     public void elimnarPersona(Integer personaId, Integer estadoPersonaId);

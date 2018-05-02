@@ -41,11 +41,11 @@ public interface IVehiculoRepositorio extends IBaseRepositorio {
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param vehiculoId id del vehiculo.
+     * @param vehiculoId       id del vehiculo.
      * @param estadoVehiculoId id del estado del vehiculo.
-     *
      */
     public void eliminarVehiculo(Integer vehiculoId, Integer estadoVehiculoId);
+
     /**
      * Metodo para obtener todos los vehiculos asosciados a un cliente
      * Llama al procedimiento almacenado PRC_BUSCAR_VEHICULO_X_CLIENTE

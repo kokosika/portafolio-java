@@ -79,7 +79,7 @@ public class ProveedorRepositorio extends BaseRepositorio<ProveedorContext> impl
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param proveedorId id del proveedor.
+     * @param proveedorId       id del proveedor.
      * @param estadoProveedorId id del estado del proveedor.
      */
     @Override

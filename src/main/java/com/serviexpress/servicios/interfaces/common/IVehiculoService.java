@@ -44,7 +44,7 @@ public interface IVehiculoService extends IBaseServicios {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param vehiculoId id del vehiculo.
+     * @param vehiculoId       id del vehiculo.
      * @param estadoVehiculoId id del estado del vehiculo.
      * @return respuesta generica a la capa api web
      */

@@ -40,7 +40,7 @@ public interface IClienteRepositorio extends IBaseRepositorio {
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param clienteId variable de tipo id del cliente.
+     * @param clienteId       variable de tipo id del cliente.
      * @param estadoClienteId variable de tipo id del estado de la persona.
      */
     public void eliminarCliente(Integer clienteId, Integer estadoClienteId);

@@ -1,8 +1,6 @@
 package com.serviexpress.servicios.interfaces.common;
 
 import com.serviexpress.dto.GenericResponse;
-import com.serviexpress.dto.custom.ClienteDto;
-import com.serviexpress.dto.custom.PersonaDto;
 import com.serviexpress.dto.custom.ProveedorDto;
 import com.serviexpress.servicios.interfaces.IBaseServicios;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +44,7 @@ public interface IProveedorService extends IBaseServicios {
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param proveedorId id del proveedor.
+     * @param proveedorId       id del proveedor.
      * @param estadoProveedorId id del estado del proveedor.
      * @return respuesta generica a la capa api web
      */

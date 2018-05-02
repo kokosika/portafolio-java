@@ -65,7 +65,7 @@ public class EmpleadoRepositorio extends BaseRepositorio<EmpleadoContext> implem
      * @param empleadoDto objecto de tipo empleado para editar en la base de datos.
      */
     @Override
-    public void editarEmpleado(EmpleadoDto empleadoDto){
+    public void editarEmpleado(EmpleadoDto empleadoDto) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_EMPLEADO_ID", empleadoDto.getId());
         params.put("V_ESTADO_EMPLEADO_ID", empleadoDto.getEstadoEmpleadoId());
@@ -81,11 +81,11 @@ public class EmpleadoRepositorio extends BaseRepositorio<EmpleadoContext> implem
      * <p>
      * 1.0 Franco Cortez - Version Inicial
      *
-     * @param empleadoId variable que contiene el id del empleado.
-     * @param estadoEmpleadoId  variable que contiene el id del estado del empleado.
+     * @param empleadoId       variable que contiene el id del empleado.
+     * @param estadoEmpleadoId variable que contiene el id del estado del empleado.
      */
     @Override
-    public void eliminarEmpleado(Integer empleadoId, Integer estadoEmpleadoId){
+    public void eliminarEmpleado(Integer empleadoId, Integer estadoEmpleadoId) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_EMPLEADO_ID", empleadoId);
         params.put("V_ESTADO_EMPLEADO_ID", estadoEmpleadoId);
