@@ -2,11 +2,14 @@ package com.serviexpress.servicios.servicios.common;
 
 import com.serviexpress.dto.GenericResponse;
 import com.serviexpress.dto.custom.PersonaDto;
+import com.serviexpress.dto.util.ErrorEnCamposDto;
 import com.serviexpress.repositorios.interfaces.common.IPersonaRepositorio;
 import com.serviexpress.servicios.interfaces.common.IPersonaService;
 import com.serviexpress.servicios.servicios.BaseServicios;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**
  * Clase base para la generacion de servicios de las personas dentro del sistema.
@@ -47,6 +50,15 @@ public class PersonaService extends BaseServicios implements IPersonaService {
      */
     @Override
     public ResponseEntity<GenericResponse> guardarPersona(PersonaDto dto) {
+        ArrayList<ErrorEnCamposDto> errores = new ArrayList<ErrorEnCamposDto>();
+        if (dto.getDivId().isEmpty() || dto.getDivId() == null || dto.getNumId() == 0 || dto.getNumId() == null)
+            errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Rut", "El rut no puede ser null"));
+        if (dto.getApellido().isEmpty() || dto.getApellido() == null)
+            errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Campo apellido", "El apellido no pude ser null"));
+        if (dto.getComunaId() == 0 || dto.getComunaId() == null)
+            errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Id comuna", "El id de la comuna no puede ser null"));
+        if (!errores.isEmpty())
+            return error("Errores", errores);
         try {
             this.personaRepositorio.guardarPersona(dto);
             return ok("Exito", "La Persona fue ingresada con exito");
