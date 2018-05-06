@@ -12,12 +12,12 @@ import java.util.Collections;
 import java.util.Date;
 
 public class JwtUtil {
-    static void addAuthentication(HttpServletResponse res, String username, String role) {
+    static void addAuthentication(HttpServletResponse res, String username, String role) throws UnsupportedEncodingException {
 
         String token = Jwts.builder()
                 .setSubject(username + " " + role)
-                .setExpiration(new Date(System.currentTimeMillis() + 60000))
-                .signWith(SignatureAlgorithm.HS512, "P@tit0")
+                .setExpiration(new Date(System.currentTimeMillis() + 60000000))
+                .signWith(SignatureAlgorithm.HS512, "secret".getBytes("UTF-8"))
                 .compact();
         res.addHeader("Authorization", "Bearer " + token);
     }
