@@ -78,7 +78,7 @@ public class ClienteRestController extends BaseRest {
      * @return retorna una respuesta al cliente.
      */
     @DeleteMapping
-    public ResponseEntity<GenericResponse> editarCliente(Integer clienteId, Integer estadoClienteId) {
+    public ResponseEntity<GenericResponse> eliminarCliente(Integer clienteId, Integer estadoClienteId) {
         return this.clienteService.eliminarCliente(clienteId, estadoClienteId);
     }
 

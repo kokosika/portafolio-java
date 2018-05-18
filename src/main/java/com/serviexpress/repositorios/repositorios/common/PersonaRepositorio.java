@@ -72,7 +72,7 @@ public class PersonaRepositorio extends BaseRepositorio<PersonaContext> implemen
     @Override
     public void editarPersona(PersonaDto personaDto) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put("V_PERSONA_ID", personaDto);
+        params.put("V_PERSONA_ID", personaDto.getId());
         params.put("V_CORREO", personaDto.getCorreo());
         params.put("V_DIRECCION", personaDto.getDireccion());
         params.put("V_DIV_ID", personaDto.getDivId());
@@ -83,7 +83,7 @@ public class PersonaRepositorio extends BaseRepositorio<PersonaContext> implemen
         params.put("V_TELEFONO_CELULAR", personaDto.getTelefonoCelular());
         params.put("V_TELEFONO_FIJO", personaDto.getTelefonoFijo());
         params.put("V_COMUNA_ID", personaDto.getComunaId());
-        params.put("V_ESTADO_PERSONA_ID", personaDto.getEstadoPersonaId());
+        //params.put("V_ESTADO_PERSONA_ID", personaDto.getEstadoPersonaId());
         params.put("V_TIPO_PERSONA_ID", personaDto.getTipoPersonaId());
         execute("PRC_UDT_PERSONA", params);
     }

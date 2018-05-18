@@ -1,8 +1,10 @@
 package com.serviexpress.servicios.servicios.util;
 
+import com.serviexpress.dto.GenericResponse;
 import com.serviexpress.repositorios.interfaces.util.IUtilidadRepositorio;
 import com.serviexpress.servicios.interfaces.util.IUtilidadServicios;
 import com.serviexpress.servicios.servicios.BaseServicios;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 /**
@@ -26,11 +28,28 @@ public class UtilidadServicios extends BaseServicios implements IUtilidadServici
      * <p>
      * 1.0 Franco Cortez - Version inicial.
      *
-     * @param comboRepositorio injeccion del repositorio IUtilidadRepositorio para la utilizacion de sus metodos.
+     * @param utilidadRepositorio injeccion del repositorio IUtilidadRepositorio para la utilizacion de sus metodos.
      */
-    public UtilidadServicios(IUtilidadRepositorio comboRepositorio) {
+    public UtilidadServicios(IUtilidadRepositorio utilidadRepositorio) {
         this.utilidadRepositorio = utilidadRepositorio;
     }
 
+    /**
+     * Metodo que genera una lista de estados del cliente, llama al metodo
+     * getRadioEstadoCliente de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getRadioEstadoCliente() {
+        try {
+            return ok(this.utilidadRepositorio.getRadioEstadoCliente());
+        } catch (Exception e) {
+            return customException(e);
+        }
+    }
 
 }

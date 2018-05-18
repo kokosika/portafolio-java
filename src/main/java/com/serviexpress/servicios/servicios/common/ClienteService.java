@@ -82,19 +82,6 @@ public class ClienteService extends BaseServicios implements IClienteService {
      */
     @Override
     public ResponseEntity<GenericResponse> editarCliente(ClienteDto dto) {
-        ArrayList<ErrorEnCamposDto> errores = new ArrayList<ErrorEnCamposDto>();
-        if (dto.getPersonaId() == 0 || dto.getPersonaId() == null)
-            errores.add(new ErrorEnCamposDto("1", "id de la persona", "El id de la persona no puede ser null"));
-        if (dto.getEstadoClienteId() == 0 || dto.getEstadoClienteId() == null)
-            errores.add(new ErrorEnCamposDto("2", "id del estado del cliente", "El id del estado del cliente no puede ser null"));
-        if (dto.getSucursalId() == 0 || dto.getSucursalId() == null)
-            errores.add(new ErrorEnCamposDto("3", "id de la sucursal", "El id de la sucursal no puede ser vacio o null"));
-        if (dto.getId() == 0 || dto.getId() == null)
-            errores.add(new ErrorEnCamposDto("4", "id del cliente", "El id del cliente no puede ser null"));
-        if (!errores.isEmpty()) {
-            return error("Errores", errores);
-        }
-
         try {
             this.clienteRepositorio.editarCliente(dto);
             return ok("Exito", "El cliente fue modificado con exito");
