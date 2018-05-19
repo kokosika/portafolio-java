@@ -24,4 +24,26 @@ public interface IUtilidadServicios extends IBaseServicios {
      */
     public ResponseEntity<GenericResponse> getRadioEstadoCliente();
 
+    /**
+     * Metodo que genera una lista de estados del proveedor, llama al metodo
+     * getRadioEstadoProveedor de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    public ResponseEntity<GenericResponse> getRadioEstadoProveedor();
+
+    /**
+     * Metodo que genera una lista de tipos del proveedor, llama al metodo
+     * getRadioTipoProveedor de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    public ResponseEntity<GenericResponse> getRadioTipoProveedor();
+
 }

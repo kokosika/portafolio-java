@@ -40,4 +40,26 @@ public class UtilidadRestController extends BaseRest {
     public ResponseEntity<GenericResponse> getRadioEstadoCliente() {
         return this.utilidadServicios.getRadioEstadoCliente();
     }
+
+    /**
+     * Metodo que llama al metodo getRadioEstadoProveedor de la Interface IUtilidadServicios.
+     * Genera una respuesta tipo json.
+     *
+     * @return respuesta al cliente.
+     */
+    @GetMapping(value = "/radio-estado-proveedor")
+    public ResponseEntity<GenericResponse> getRadioEstadoProveedor() {
+        return this.utilidadServicios.getRadioEstadoProveedor();
+    }
+
+    /**
+     * Metodo que llama al metodo getRadioTipoProveedor de la Interface IUtilidadServicios.
+     * Genera una respuesta tipo json.
+     *
+     * @return respuesta al cliente.
+     */
+    @GetMapping(value = "/radio-tipo-proveedor")
+    public ResponseEntity<GenericResponse> getRadioTipoProveedor() {
+        return this.utilidadServicios.getRadioTipoProveedor();
+    }
 }

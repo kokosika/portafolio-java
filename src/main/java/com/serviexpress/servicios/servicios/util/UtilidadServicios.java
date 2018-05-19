@@ -52,4 +52,40 @@ public class UtilidadServicios extends BaseServicios implements IUtilidadServici
         }
     }
 
+    /**
+     * Metodo que genera una lista de estados del proveedor, llama al metodo
+     * getRadioEstadoProveedor de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getRadioEstadoProveedor() {
+        try {
+            return ok(this.utilidadRepositorio.getRadioEstadoProveedor());
+        } catch (Exception e) {
+            return customException(e);
+        }
+    }
+
+    /**
+     * Metodo que genera una lista de tipos del proveedor, llama al metodo
+     * getRadioTipoProveedor de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getRadioTipoProveedor() {
+        try {
+            return ok(this.utilidadRepositorio.getRadioTipoProveedor());
+        } catch (Exception e) {
+            return customException(e);
+        }
+    }
+
 }

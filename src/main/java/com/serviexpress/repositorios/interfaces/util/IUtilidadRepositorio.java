@@ -24,4 +24,24 @@ public interface IUtilidadRepositorio extends IBaseRepositorio {
      */
     public List<UtilidadesDto> getRadioEstadoCliente();
 
+    /**
+     * Metodo que genera una lista de utilidad para los estados del proveedor
+     * Llama al procedimiento almacenado PRC_RADIO_ESTADO_PROVEEDOR
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna una lista de utilidades de estados del proveedor
+     */
+    public List<UtilidadesDto> getRadioEstadoProveedor();
+
+    /**
+     * Metodo que genera una lista de utilidad para los tipos del proveedor
+     * Llama al procedimiento almacenado PRC_RADIO_TIPO_PROVEEDOR
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna una lista de utilidades de tipos del proveedor
+     */
+    public List<UtilidadesDto> getRadioTipoProveedor();
+
 }
