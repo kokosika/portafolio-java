@@ -14,6 +14,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
  * <p>
  * 1.0 Franco Cortez - Version inicial.
  */
+@SuppressWarnings("ALL")
 @Configuration
 public class HibernateConfig {
 
