@@ -18,4 +18,5 @@ public class ServiexpressApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(ServiexpressApplication.class);
     }
+
 }

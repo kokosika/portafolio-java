@@ -50,11 +50,9 @@ public class PersonaService extends BaseServicios implements IPersonaService {
      */
     @Override
     public ResponseEntity<GenericResponse> guardarPersona(PersonaDto dto) {
-        ArrayList<ErrorEnCamposDto> errores = new ArrayList<ErrorEnCamposDto>();
+        ArrayList<ErrorEnCamposDto> errores = new ArrayList<>();
         if (dto.getDivId().isEmpty() || dto.getDivId() == null || dto.getNumId() == 0 || dto.getNumId() == null)
             errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Rut", "El rut no puede ser null"));
-        if (dto.getApellido().isEmpty() || dto.getApellido() == null)
-            errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Campo apellido", "El apellido no pude ser null"));
         if (dto.getComunaId() == 0 || dto.getComunaId() == null)
             errores.add(new ErrorEnCamposDto(String.valueOf(errores.size() + 1), "Id comuna", "El id de la comuna no puede ser null"));
         if (!errores.isEmpty())

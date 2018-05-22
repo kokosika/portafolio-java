@@ -14,7 +14,7 @@ public class EmpleadoCustomDto {
     /**
      * Variable que almacena el id de la persona
      */
-    private Integer idPersona;
+    private Integer personaId;
 
     /**
      * Variable que almacena el apellido de la persona
@@ -185,12 +185,12 @@ public class EmpleadoCustomDto {
      */
     private Date fechaNacimiento;
 
-    public Integer getIdPersona() {
-        return idPersona;
+    public Integer getPersonaId() {
+        return personaId;
     }
 
-    public void setIdPersona(Integer idPersona) {
-        this.idPersona = idPersona;
+    public void setPersonaId(Integer personaId) {
+        this.personaId = personaId;
     }
 
     public String getApellido() {
