@@ -88,4 +88,40 @@ public class UtilidadServicios extends BaseServicios implements IUtilidadServici
         }
     }
 
+    /**
+     * Metodo que genera una lista de estado del empleado, llama al metodo
+     * getRadioEstadoEmpleado de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getRadioEstadoEmpleado() {
+        try {
+            return ok(this.utilidadRepositorio.getRadioEstadoEmpleado());
+        } catch (Exception e) {
+            return customException(e);
+        }
+    }
+
+    /**
+     * Metodo que genera una lista de tipos del empleado, llama al metodo
+     * getRadioTipoEmpleado de la capa datos.
+     * Envia una respuesta generica al cliente
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getRadioTipoEmpleado() {
+        try {
+            return ok(this.utilidadRepositorio.getRadioTipoEmpleado());
+        } catch (Exception e) {
+            return customException(e);
+        }
+    }
+
 }

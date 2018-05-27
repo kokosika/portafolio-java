@@ -69,4 +69,15 @@ public interface IComboRepositorio extends IBaseRepositorio {
      * @return retorna un combo generico
      */
     public List<ComboDto> getComboModelo(ComboDto filter);
+
+    /**
+     * Metodo que genera un combo de las sucursales.
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna un combo generico
+     */
+    public List<ComboDto> getComboSucursal();
+
+
 }

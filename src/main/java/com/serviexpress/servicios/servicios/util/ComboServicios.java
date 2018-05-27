@@ -140,4 +140,21 @@ public class ComboServicios extends BaseServicios implements IComboServicios {
             return customException(ex);
         }
     }
+
+    /**
+     * Metodo que genera un combo llamando al repositorio IComboRepositorio a su metodo
+     * getComboSucursal
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica.
+     */
+    @Override
+    public ResponseEntity<GenericResponse> getComboSucursal() {
+        try {
+            return ok(this.comboRepositorio.getComboSucursal());
+        } catch (Exception ex) {
+            return customException(ex);
+        }
+    }
 }

@@ -93,4 +93,15 @@ public class ComboRestController extends BaseRest {
         return this.comboServicios.getComboModelo(filter);
     }
 
+    /**
+     * Metodo que llama al metodo getComboSucursal de la Interface IComboServicio.
+     * Genera una respuesta tipo json.
+     *
+     * @return respuesta al cliente.
+     */
+    @PostMapping(value = "/sucursal")
+    public ResponseEntity<GenericResponse> getComboSucursal() {
+        return this.comboServicios.getComboSucursal();
+    }
+
 }

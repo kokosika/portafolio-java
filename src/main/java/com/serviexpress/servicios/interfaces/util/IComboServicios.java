@@ -58,4 +58,14 @@ public interface IComboServicios extends IBaseServicios {
      * @return retorna una respuesta generica.
      */
     public ResponseEntity<GenericResponse> getComboModelo(ComboDto filter);
+
+    /**
+     * Metodo que genera un combo llamando al repositorio IComboRepositorio a su metodo
+     * getComboSucursal
+     * <p>
+     * 1.0 Franco Cortez - Version inicial.
+     *
+     * @return retorna una respuesta generica.
+     */
+    public ResponseEntity<GenericResponse> getComboSucursal();
 }

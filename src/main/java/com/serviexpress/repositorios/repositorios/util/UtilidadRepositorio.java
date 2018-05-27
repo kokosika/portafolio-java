@@ -78,5 +78,33 @@ public class UtilidadRepositorio extends BaseRepositorio<UtilidadContext> implem
         return (List<UtilidadesDto>) executeList(UtilidadesDto.class, "PRC_RADIO_TIPO_PROVEEDOR");
     }
 
+    /**
+     * Metodo que genera una lista de utilidad para los estado del empleado
+     * Llama al procedimiento almacenado PRC_RADIO_ESTADO_EMPLEADO
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna una lista de utilidades de estados del empleado
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<UtilidadesDto> getRadioEstadoEmpleado() {
+        return (List<UtilidadesDto>) executeList(UtilidadesDto.class, "PRC_RADIO_ESTADO_EMPLEADO");
+    }
+
+    /**
+     * Metodo que genera una lista de utilidad para los tipo del empleado
+     * Llama al procedimiento almacenado PRC_RADIO_TIPO_EMPLEADO
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna una lista de utilidades de tipos del empleado
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<UtilidadesDto> getRadioTipoEmpleado() {
+        return (List<UtilidadesDto>) executeList(UtilidadesDto.class, "PRC_RADIO_TIPO_EMPLEADO");
+    }
+
 
 }

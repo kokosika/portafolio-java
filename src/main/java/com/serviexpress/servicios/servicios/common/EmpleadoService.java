@@ -51,18 +51,6 @@ public class EmpleadoService extends BaseServicios implements IEmpleadoService {
      */
     @Override
     public ResponseEntity<GenericResponse> guardarEmpleado(EmpleadoDto dto) {
-        ArrayList<ErrorEnCamposDto> errores = new ArrayList<ErrorEnCamposDto>();
-        if (dto.getPersonaId() == 0 || dto.getPersonaId() == null)
-            errores.add(new ErrorEnCamposDto("1", "Id de la persona", "El campo id de la persona no puede ser null"));
-        if (dto.getEstadoEmpleadoId() == 0 || dto.getEstadoEmpleadoId() == null)
-            errores.add(new ErrorEnCamposDto("2", "id del estado del empleado", "El id del estado del empleado no puede ser null"));
-        if (dto.getSucursalId() == 0 || dto.getSucursalId() == null)
-            errores.add(new ErrorEnCamposDto("3", "id de la sucursal", "El id de la sucursal no puede ser null"));
-        if (dto.getTipoEmpleadoId() == 0 || dto.getTipoEmpleadoId() == null)
-            errores.add(new ErrorEnCamposDto("4", "id del tipo de empleado", "El id del tipo de empelado no puede ser null"));
-
-        if (!errores.isEmpty())
-            return error("Errores", errores);
         try {
             this.empleadoRepositorio.guardarEmpleado(dto);
             return ok("Exito", "El empleado fue registrado con exito");
@@ -84,20 +72,7 @@ public class EmpleadoService extends BaseServicios implements IEmpleadoService {
      */
     @Override
     public ResponseEntity<GenericResponse> editarEmpleado(EmpleadoDto dto) {
-        ArrayList<ErrorEnCamposDto> errores = new ArrayList<ErrorEnCamposDto>();
-        if (dto.getPersonaId() == 0 || dto.getPersonaId() == null)
-            errores.add(new ErrorEnCamposDto("1", "Id de la persona", "El campo id de la persona no puede ser null"));
-        if (dto.getEstadoEmpleadoId() == 0 || dto.getEstadoEmpleadoId() == null)
-            errores.add(new ErrorEnCamposDto("2", "id del estado del empleado", "El id del estado del empleado no puede ser null"));
-        if (dto.getSucursalId() == 0 || dto.getSucursalId() == null)
-            errores.add(new ErrorEnCamposDto("3", "id de la sucursal", "El id de la sucursal no puede ser null"));
-        if (dto.getTipoEmpleadoId() == 0 || dto.getTipoEmpleadoId() == null)
-            errores.add(new ErrorEnCamposDto("4", "id del tipo de empleado", "El id del tipo de empelado no puede ser null"));
-        if (dto.getId() == 0 || dto.getId() == null)
-            errores.add(new ErrorEnCamposDto("5", "id del empleado", "El id del empleado no puede ser null"));
 
-        if (!errores.isEmpty())
-            return error("Errores", errores);
         try {
             this.empleadoRepositorio.editarEmpleado(dto);
             return ok("Exito", "El empleado fue modificado con exito");

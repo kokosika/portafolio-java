@@ -147,4 +147,16 @@ public class ComboRepositorio extends BaseRepositorio<ComboContext> implements I
     public List<ComboDto> getComboModelo(ComboDto filter) {
         return generarCombo("GET_COMBO_MODELO", filter);
     }
+
+    /**
+     * Metodo que genera un combo de las sucursales.
+     * <p>
+     * 1.0 Franco Cortez - Version inicial
+     *
+     * @return retorna un combo generico
+     */
+    @Override
+    public List<ComboDto> getComboSucursal() {
+        return generarCombo("GET_COMBO_SUCURSAL");
+    }
 }

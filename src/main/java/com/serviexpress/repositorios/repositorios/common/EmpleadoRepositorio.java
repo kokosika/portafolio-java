@@ -50,9 +50,9 @@ public class EmpleadoRepositorio extends BaseRepositorio<EmpleadoContext> implem
     public void guardarEmpleado(EmpleadoDto empleadoDto) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_ESTADO_EMPLEADO_ID", empleadoDto.getEstadoEmpleadoId());
-        params.put("V_TIPO_EMPLEADO_ID", empleadoDto.getTipoEmpleadoId());
         params.put("V_PERSONA_ID", empleadoDto.getPersonaId());
         params.put("V_SUCURSAL_ID", empleadoDto.getSucursalId());
+        params.put("V_TIPO_EMPLEADO_ID", empleadoDto.getTipoEmpleadoId());
         execute("PRC_INS_EMPLEADO", params);
     }
 
@@ -68,7 +68,6 @@ public class EmpleadoRepositorio extends BaseRepositorio<EmpleadoContext> implem
     public void editarEmpleado(EmpleadoDto empleadoDto) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("V_EMPLEADO_ID", empleadoDto.getId());
-        params.put("V_ESTADO_EMPLEADO_ID", empleadoDto.getEstadoEmpleadoId());
         params.put("V_TIPO_EMPLEADO_ID", empleadoDto.getTipoEmpleadoId());
         params.put("V_PERSONA_ID", empleadoDto.getPersonaId());
         params.put("V_SUCURSAL_ID", empleadoDto.getSucursalId());
@@ -103,7 +102,7 @@ public class EmpleadoRepositorio extends BaseRepositorio<EmpleadoContext> implem
     @SuppressWarnings("unchecked")
     @Override
     public List<EmpleadoCustomDto> obtenerTodosLosEmpleados() {
-        return (List<EmpleadoCustomDto>) executeList(EmpleadoCustomDto.class, "");
+        return (List<EmpleadoCustomDto>) executeList(EmpleadoCustomDto.class, "PRC_LISTAR_EMPLEADOS");
     }
 
 }
