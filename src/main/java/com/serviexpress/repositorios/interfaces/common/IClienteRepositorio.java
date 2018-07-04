@@ -66,4 +66,6 @@ public interface IClienteRepositorio extends IBaseRepositorio {
      */
     public List<ClienteCustomDto> obtenerTodosLosClientes();
 
+    public ClienteCustomDto buscarClientePorId(String nombre);
+
 }

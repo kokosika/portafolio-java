@@ -55,6 +55,13 @@ public class ComboRepositorio extends BaseRepositorio<ComboContext> implements I
         return (List<ComboDto>) executeList(ComboDto.class, procedimiento, params);
     }
 
+    private List<ComboDto> generarCombo2(String procedimiento, ComboDto filter) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("BUSCAR_POR_ID", null);
+        params.put("BUSCAR_POR_NOMBRE", filter.getName());
+        return (List<ComboDto>) executeList(ComboDto.class, procedimiento, params);
+    }
+
     /**
      * Metodo principal que genera la llamada a los procedimientos de forma generica
      * para generar los combos asociados al procedimiento.
@@ -158,5 +165,9 @@ public class ComboRepositorio extends BaseRepositorio<ComboContext> implements I
     @Override
     public List<ComboDto> getComboSucursal() {
         return generarCombo("GET_COMBO_SUCURSAL");
+    }
+
+    public List<ComboDto> getVehiculosPorUsuario(ComboDto filter) {
+        return generarCombo2("GET_COMBO_VEHICULOXUSUARIO", filter);
     }
 }

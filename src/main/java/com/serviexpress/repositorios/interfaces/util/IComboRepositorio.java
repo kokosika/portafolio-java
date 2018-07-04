@@ -79,5 +79,5 @@ public interface IComboRepositorio extends IBaseRepositorio {
      */
     public List<ComboDto> getComboSucursal();
 
-
+    public List<ComboDto> getVehiculosPorUsuario(ComboDto filter);
 }

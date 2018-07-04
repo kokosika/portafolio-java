@@ -104,4 +104,8 @@ public class ComboRestController extends BaseRest {
         return this.comboServicios.getComboSucursal();
     }
 
+    @PostMapping(value = "/vehiculo")
+    public ResponseEntity<GenericResponse> getVehiculosPorUsuario(@RequestBody ComboDto filter) {
+        return this.comboServicios.getVehiculosPorUsuario(filter);
+    }
 }

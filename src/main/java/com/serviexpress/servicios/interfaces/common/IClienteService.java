@@ -74,4 +74,6 @@ public interface IClienteService extends IBaseServicios {
      * @return respuesta generica a la capa api web
      */
     public ResponseEntity<GenericResponse> obtenerTodosLosClientes();
+
+    public ResponseEntity<GenericResponse> buscarClientePorId(String nombre);
 }

@@ -157,4 +157,12 @@ public class ComboServicios extends BaseServicios implements IComboServicios {
             return customException(ex);
         }
     }
+
+    public ResponseEntity<GenericResponse> getVehiculosPorUsuario(ComboDto filter) {
+        try {
+            return ok(this.comboRepositorio.getVehiculosPorUsuario(filter));
+        } catch (Exception ex) {
+            return customException(ex);
+        }
+    }
 }

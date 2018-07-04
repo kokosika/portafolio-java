@@ -114,6 +114,11 @@ public class ClienteRestController extends BaseRest {
     public ResponseEntity<GenericResponse> obtenerTodosLosClientes() {
         return this.clienteService.obtenerTodosLosClientes();
     }
+
+    @GetMapping(value = "/buscar-cliente-por-nombre")
+    public ResponseEntity<GenericResponse> buscarClientePorId(String nombre) {
+        return this.clienteService.buscarClientePorId(nombre);
+    }
 }
 
 

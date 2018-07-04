@@ -126,4 +126,15 @@ public class ClienteRepositorio extends BaseRepositorio<ClienteContext> implemen
         return (List<ClienteCustomDto>) executeList(ClienteCustomDto.class, "PRC_LISTAR_CLIENTES");
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public ClienteCustomDto buscarClientePorId(String nombre) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("V_NOMBRE_USUARIO", nombre);
+        List<ClienteCustomDto> list = (List<ClienteCustomDto>) executeList(ClienteCustomDto.class, "PRC_BUSCAR_CLIENTE_X_NOMBRE", params);
+        if (list.isEmpty())
+            return null;
+        return list.get(0);
+    }
+
 }

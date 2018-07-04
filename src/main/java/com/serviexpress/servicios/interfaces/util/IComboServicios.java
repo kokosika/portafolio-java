@@ -68,4 +68,6 @@ public interface IComboServicios extends IBaseServicios {
      * @return retorna una respuesta generica.
      */
     public ResponseEntity<GenericResponse> getComboSucursal();
+
+    public ResponseEntity<GenericResponse> getVehiculosPorUsuario(ComboDto filter);
 }

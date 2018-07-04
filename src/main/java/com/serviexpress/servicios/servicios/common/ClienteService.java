@@ -162,4 +162,15 @@ public class ClienteService extends BaseServicios implements IClienteService {
         }
     }
 
+    public ResponseEntity<GenericResponse> buscarClientePorId(String nombre) {
+        try {
+            if (nombre == null) {
+                throw new Exception("El id no puede ser null");
+            }
+            return ok(this.clienteRepositorio.buscarClientePorId(nombre));
+        } catch (Exception ex) {
+            return customException(ex);
+        }
+    }
+
 }
